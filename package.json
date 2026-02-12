@@ -1,0 +1,27 @@
+{
+  "name": "icon-img-generater",
+  "type": "module",
+  "scripts": {
+    "dev": "npm run build:css && npm run build:js && wrangler dev",
+    "dev:css": "tailwindcss -i ./src/styles.css -o ./public/styles.css --watch",
+    "dev:js": "esbuild src/app.ts --bundle --outfile=public/app.js --watch",
+    "build:css": "tailwindcss -i ./src/styles.css -o ./public/styles.css --minify",
+    "build:js": "esbuild src/app.ts --bundle --outfile=public/app.js --minify",
+    "build": "npm run build:css && npm run build:js",
+    "deploy": "npm run build && wrangler deploy --minify",
+    "typecheck:client": "tsc --noEmit -p tsconfig.client.json",
+    "cf-typegen": "wrangler types --env-interface CloudflareBindings"
+  },
+  "dependencies": {
+    "@iconify/utils": "^3.1.0",
+    "hono": "^4.11.9"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260212.0",
+    "@tailwindcss/cli": "^4.1.18",
+    "esbuild": "^0.27.3",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3",
+    "wrangler": "^4.4.0"
+  }
+}

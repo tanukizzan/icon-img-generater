@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+/* Dark theme color input */
+input[type="color"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: 1px solid #27272a;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  padding: 2px;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 0.25rem;
+}
+
+/* Dark theme select */
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23a1a1aa' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 1rem;
+  padding-right: 2rem;
+}
+
+/* Radio button accent */
+input[type="radio"] {
+  accent-color: #a1a1aa;
+}
