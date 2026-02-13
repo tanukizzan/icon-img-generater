@@ -91,9 +91,6 @@ export function setupEventListeners(): void {
   // Shape change
   els.shapeSlider.addEventListener("input", updatePreview);
 
-  // Size change
-  // els.sizeSelect.addEventListener("change", updatePreview);
-
   // Download buttons
   els.downloadSvgBtn.addEventListener("click", downloadSvg);
   els.downloadJpgBtn.addEventListener("click", downloadJpg);

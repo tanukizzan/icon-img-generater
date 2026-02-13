@@ -13,10 +13,10 @@ export function updatePreview(): void {
   const svgEl = els.previewArea.querySelector("svg");
   if (svgEl) {
     // Always use fit/centered mode
-    svgEl.style.width = "512px";
-    svgEl.style.height = "512px";
-    svgEl.style.maxWidth = "100%";
-    svgEl.style.maxHeight = "100%";
+    svgEl.style.width = "100%";
+    svgEl.style.height = "100%";
+    svgEl.style.maxWidth = "512px";
+    svgEl.style.maxHeight = "512px";
 
     // Ensure container centering
     els.previewArea.classList.add("items-center", "justify-center");

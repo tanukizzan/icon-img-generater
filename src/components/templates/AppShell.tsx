@@ -12,7 +12,7 @@ export const AppShell: FC<AppShellProps> = (props) => (
       <title>{props.title}</title>
       <link href="/styles.css" rel="stylesheet" />
     </head>
-    <body class="bg-zinc-950 text-zinc-100 m-0">
+    <body class="bg-zinc-950 text-zinc-100 m-0 h-[100dvh]">
       {props.children}
       <script src="/app.js"></script>
     </body>
