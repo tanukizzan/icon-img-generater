@@ -3,6 +3,8 @@ import { fetchIcon } from "../api/icon";
 import { updatePreview } from "../ui/preview";
 import { downloadSvg } from "../download/svg";
 import { downloadJpg } from "../download/jpg";
+import { updateInputStates } from "../ui/inputs";
+import { subscribe } from "../state";
 
 export function setupEventListeners(): void {
   // Preview button
@@ -48,4 +50,6 @@ export function setupEventListeners(): void {
   // Download buttons
   els.downloadSvgBtn.addEventListener("click", downloadSvg);
   els.downloadJpgBtn.addEventListener("click", downloadJpg);
+
+  subscribe(updateInputStates);
 }
