@@ -11,7 +11,6 @@ const app = new Hono<{ Bindings: Bindings }>()
 app.get("/api/icon-svg", async (c) => {
   const name = c.req.query("name");
   const color = c.req.query("color");
-  const basePath = c.env.BASE_PATH || "";
 
   if (!name) {
     return c.json({ error: "name parameter is required" }, 400);

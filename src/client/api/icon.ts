@@ -4,11 +4,14 @@ import { parseSvg } from "../svg/parse";
 import { showError, hideError } from "../ui/error";
 import { setDownloadEnabled } from "../ui/download-buttons";
 import { updatePreview } from "../ui/preview";
-import { useBasePath } from '../../context';
 
-export async function fetchIcon(): Promise<void> {
+type Bindings = {
+  BASE_PATH: string
+}
+
+export async function fetchIcon(env: Bindings): Promise<void> {
   const name = els.iconNameInput.value.trim();
-  const basePath = useBasePath();
+  const basePath = env.BASE_PATH || "";
 
   if (!name) {
     showError("アイコン名を入力してください");

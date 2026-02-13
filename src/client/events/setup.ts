@@ -7,6 +7,9 @@ import { updateInputStates } from "../ui/inputs";
 import { subscribe } from "../state";
 import notoIcons from "../data/noto-v1.json";
 
+type Bindings = {
+  BASE_PATH: string
+}
 // Flag to track if it's the first generation
 let isFirstGeneration = true;
 
