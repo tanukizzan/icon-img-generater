@@ -10,13 +10,11 @@ export const els = {
   sizeSelect: document.getElementById("sizeSelect") as HTMLSelectElement,
   downloadSvgBtn: document.getElementById("downloadSvgBtn") as HTMLButtonElement,
   downloadJpgBtn: document.getElementById("downloadJpgBtn") as HTMLButtonElement,
+  shapeSlider: document.getElementById("shapeSlider") as HTMLInputElement,
 };
 
-export function getShape(): string {
-  const checked = document.querySelector(
-    'input[name="shape"]:checked'
-  ) as HTMLInputElement;
-  return checked.value;
+export function getShape(): number {
+  return Number(els.shapeSlider.value);
 }
 
 export function getSize(): number {

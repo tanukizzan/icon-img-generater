@@ -1,4 +1,4 @@
-export type Shape = "square" | "circle" | "rounded";
+export type Shape = number;
 export type Size = 256 | 512 | 1024;
 export type PreviewMode = "fit" | "actual";
 

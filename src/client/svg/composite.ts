@@ -14,18 +14,9 @@ export function buildCompositeSvg(): string | null {
   const iconSize = size * 0.6;
   const offset = (size - iconSize) / 2;
 
-  let bgShape = "";
-  switch (shape) {
-    case "square":
-      bgShape = `<rect width="${size}" height="${size}" fill="${bgColor}" />`;
-      break;
-    case "circle":
-      bgShape = `<circle cx="${size / 2}" cy="${size / 2}" r="${size / 2}" fill="${bgColor}" />`;
-      break;
-    case "rounded":
-      bgShape = `<rect width="${size}" height="${size}" rx="${size * 0.2}" fill="${bgColor}" />`;
-      break;
-  }
+  const cornerRadiusPercentage = getShape();
+  const radius = size * (cornerRadiusPercentage / 100);
+  const bgShape = `<rect width="${size}" height="${size}" rx="${radius}" fill="${bgColor}" />`;
 
   const coloredInner = colorizeInner(iconInner, iconColor, isColoredIcon);
 

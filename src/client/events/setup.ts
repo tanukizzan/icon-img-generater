@@ -89,9 +89,7 @@ export function setupEventListeners(): void {
   });
 
   // Shape change
-  document.querySelectorAll('input[name="shape"]').forEach((radio) => {
-    radio.addEventListener("change", updatePreview);
-  });
+  els.shapeSlider.addEventListener("input", updatePreview);
 
   // Size change
   // els.sizeSelect.addEventListener("change", updatePreview);
