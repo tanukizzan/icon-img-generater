@@ -2,7 +2,7 @@
   "name": "icon-img-generater",
   "type": "module",
   "scripts": {
-    "dev": "npm run build:css && npm run build:js && wrangler dev",
+    "dev": "npm run build:css && npm run build:js && wrangler dev --ip 0.0.0.0",
     "dev:css": "tailwindcss -i ./src/styles.css -o ./public/styles.css --watch",
     "dev:js": "esbuild src/app.ts --bundle --outfile=public/app.js --watch",
     "build:css": "tailwindcss -i ./src/styles.css -o ./public/styles.css --minify",

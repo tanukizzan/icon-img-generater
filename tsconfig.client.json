@@ -12,6 +12,7 @@
     ]
   },
   "include": [
-    "src/app.ts"
+    "src/app.ts",
+    "src/client/**/*.ts"
   ]
 }
