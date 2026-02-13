@@ -2,7 +2,8 @@
   "name": "icon-img-generater",
   "type": "module",
   "scripts": {
-    "dev": "npm run build:css && npm run build:js && wrangler dev --ip 0.0.0.0",
+    "hono": "wrangler dev --ip 0.0.0.0 --live-reload",
+    "dev": "npm run build:css && npm run build:js && wrangler dev --ip 0.0.0.0 --live-reload",
     "dev:css": "tailwindcss -i ./src/styles.css -o ./public/styles.css --watch",
     "dev:js": "esbuild src/app.ts --bundle --outfile=public/app.js --watch",
     "build:css": "tailwindcss -i ./src/styles.css -o ./public/styles.css --minify",
@@ -18,6 +19,7 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20260212.0",
+    "@iconify/tailwind4": "^1.2.1",
     "@tailwindcss/cli": "^4.1.18",
     "esbuild": "^0.27.3",
     "tailwindcss": "^4.1.18",

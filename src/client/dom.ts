@@ -10,8 +10,6 @@ export const els = {
   sizeSelect: document.getElementById("sizeSelect") as HTMLSelectElement,
   downloadSvgBtn: document.getElementById("downloadSvgBtn") as HTMLButtonElement,
   downloadJpgBtn: document.getElementById("downloadJpgBtn") as HTMLButtonElement,
-  previewModeFit: document.getElementById("previewModeFit") as HTMLButtonElement,
-  previewModeActual: document.getElementById("previewModeActual") as HTMLButtonElement,
 };
 
 export function getShape(): string {

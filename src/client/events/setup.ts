@@ -1,7 +1,6 @@
 import { els } from "../dom";
-import { setState } from "../state";
 import { fetchIcon } from "../api/icon";
-import { updatePreview, updatePreviewModeUI } from "../ui/preview";
+import { updatePreview } from "../ui/preview";
 import { downloadSvg } from "../download/svg";
 import { downloadJpg } from "../download/jpg";
 
@@ -44,20 +43,7 @@ export function setupEventListeners(): void {
   });
 
   // Size change
-  els.sizeSelect.addEventListener("change", updatePreview);
-
-  // Preview mode toggle
-  els.previewModeFit.addEventListener("click", () => {
-    setState({ previewMode: "fit" });
-    updatePreviewModeUI();
-    updatePreview();
-  });
-
-  els.previewModeActual.addEventListener("click", () => {
-    setState({ previewMode: "actual" });
-    updatePreviewModeUI();
-    updatePreview();
-  });
+  // els.sizeSelect.addEventListener("change", updatePreview);
 
   // Download buttons
   els.downloadSvgBtn.addEventListener("click", downloadSvg);

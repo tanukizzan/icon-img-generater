@@ -2,7 +2,8 @@ import type { FC } from "hono/jsx";
 import { AppShell } from "../templates/AppShell";
 import { GeneratorLayout } from "../templates/GeneratorLayout";
 import { IconNameCard } from "../organisms/IconNameCard";
-import { SettingsCard } from "../organisms/SettingsCard";
+import { ColorSettingsCard } from "../organisms/ColorSettingsCard";
+import { DisplaySettingsCard } from "../organisms/DisplaySettingsCard";
 import { DownloadCard } from "../organisms/DownloadCard";
 import { PreviewCard } from "../organisms/PreviewCard";
 
@@ -12,7 +13,8 @@ export const HomePage: FC = () => (
       sidebar={
         <>
           <IconNameCard />
-          <SettingsCard />
+          <ColorSettingsCard />
+          <DisplaySettingsCard />
           <DownloadCard />
         </>
       }

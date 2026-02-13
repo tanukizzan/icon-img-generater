@@ -19,7 +19,6 @@ export async function fetchIcon(): Promise<void> {
 
   hideError();
   els.previewBtn.disabled = true;
-  els.previewBtn.textContent = "読み込み中...";
 
   try {
     const res = await fetch(`/api/icon-svg?name=${encodeURIComponent(name)}`);
@@ -52,6 +51,5 @@ export async function fetchIcon(): Promise<void> {
     els.previewArea.innerHTML = `<span class="text-zinc-500 text-sm">アイコン名を入力してプレビュー</span>`;
   } finally {
     els.previewBtn.disabled = false;
-    els.previewBtn.textContent = "プレビュー";
   }
 }
