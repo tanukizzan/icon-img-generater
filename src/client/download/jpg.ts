@@ -18,7 +18,7 @@ export function downloadJpg(): void {
     canvas.height = size;
     const ctx = canvas.getContext("2d")!;
 
-    ctx.fillStyle = "#FFFFFF";
+    ctx.fillStyle = "rgba(255, 255, 255, 0)";
     ctx.fillRect(0, 0, size, size);
 
     ctx.drawImage(img, 0, 0, size, size);

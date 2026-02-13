@@ -6,6 +6,7 @@ const state: AppState = {
   iconSvgContent: null,
   iconViewBox: "0 0 24 24",
   iconInner: "",
+  isColoredIcon: false,
   previewMode: "fit",
 };
 

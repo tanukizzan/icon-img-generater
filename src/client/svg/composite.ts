@@ -3,7 +3,7 @@ import { getState } from "../state";
 import { els, getShape, getSize } from "../dom";
 
 export function buildCompositeSvg(): string | null {
-  const { iconInner, iconViewBox } = getState();
+  const { iconInner, iconViewBox, isColoredIcon } = getState();
   if (!iconInner) return null;
 
   const size = getSize();
@@ -27,7 +27,7 @@ export function buildCompositeSvg(): string | null {
       break;
   }
 
-  const coloredInner = colorizeInner(iconInner, iconColor);
+  const coloredInner = colorizeInner(iconInner, iconColor, isColoredIcon);
 
   return [
     `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">`,

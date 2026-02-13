@@ -1,4 +1,8 @@
-export function colorizeInner(inner: string, color: string): string {
+export function colorizeInner(
+  inner: string,
+  color: string,
+  isColoredIcon = false
+): string {
   const parser = new DOMParser();
   const doc = parser.parseFromString(
     `<svg xmlns="http://www.w3.org/2000/svg">${inner}</svg>`,
@@ -11,12 +15,17 @@ export function colorizeInner(inner: string, color: string): string {
   );
   shapes.forEach((el) => {
     const currentFill = el.getAttribute("fill");
-    if (currentFill !== "none") {
-      el.setAttribute("fill", color);
+    if (currentFill && currentFill !== "none") {
+      if (!isColoredIcon || currentFill === "currentColor") {
+        el.setAttribute("fill", color);
+      }
     }
+
     const currentStroke = el.getAttribute("stroke");
     if (currentStroke && currentStroke !== "none") {
-      el.setAttribute("stroke", color);
+      if (!isColoredIcon || currentStroke === "currentColor") {
+        el.setAttribute("stroke", color);
+      }
     }
   });
 

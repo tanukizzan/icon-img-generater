@@ -37,6 +37,7 @@ export async function fetchIcon(): Promise<void> {
       iconSvgContent: svgText,
       iconViewBox: parsed.viewBox,
       iconInner: parsed.inner,
+      isColoredIcon: parsed.isColored,
     });
 
     setDownloadEnabled(true);
