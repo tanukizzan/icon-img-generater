@@ -1,21 +1,13 @@
-```txt
-npm install
-npm run dev
-```
+# かんたんアイコンジェネレーター
 
-```txt
-npm run deploy
-```
+![screenshot](./screenshot.png)
 
-[For generating/synchronizing types based on your Worker configuration run](https://developers.cloudflare.com/workers/wrangler/commands/#types):
+Iconifyアイコンを使用して、カスタム画像を作成できるツールです。
+全てのIconifyアイコンを使用できます。
 
-```txt
-npm run cf-typegen
-```
+## 使い方
 
-Pass the `CloudflareBindings` as generics when instantiation `Hono`:
-
-```ts
-// src/index.ts
-const app = new Hono<{ Bindings: CloudflareBindings }>()
-```
+1. [Iconify](https://iconify.design/)でアイコンを探して、アイコン名を入力してください。  
+見つけるのが面倒な人はランダムボタンをクリック🎲
+2. 背景色とアイコンの色を設定します（色付きの絵文字を使用する場合アイコンの色は設定できません）
+3. かたちとサイズを選んでダウンロード
