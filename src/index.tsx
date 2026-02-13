@@ -1,7 +1,11 @@
 import { Hono } from "hono";
 import { HomePage } from "./components/pages/HomePage";
 
-const app = new Hono();
+type Bindings = {
+  BASE_PATH: string
+}
+
+const app = new Hono<{ Bindings: Bindings }>()
 
 app.get("/api/icon-svg", async (c) => {
   const name = c.req.query("name");

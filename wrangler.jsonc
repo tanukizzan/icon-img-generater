@@ -5,6 +5,9 @@
   "compatibility_date": "2026-02-12",
   "assets": {
     "directory": "./public"
+  },
+  "vars": {
+    "BASE_PATH": "/tools/icon-gen"
   }
   // "compatibility_flags": [
   //   "nodejs_compat"
