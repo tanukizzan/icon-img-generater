@@ -17,16 +17,16 @@ export const ColorSettingsCard: FC = () => (
       </div>
       <div class="space-y-4 px-1">
         <ColorPickerField
-          label="アイコン色"
-          pickerId="iconColorPicker"
-          textId="iconColorText"
-          defaultValue="#FFFFFF"
-        />
-        <ColorPickerField
           label="背景色"
           pickerId="bgColorPicker"
           textId="bgColorText"
           defaultValue="#3B82F6"
+        />
+        <ColorPickerField
+          label="アイコン色"
+          pickerId="iconColorPicker"
+          textId="iconColorText"
+          defaultValue="#FFFFFF"
         />
       </div>
     </div>

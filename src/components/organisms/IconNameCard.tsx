@@ -14,7 +14,16 @@ export const IconNameCard: FC = () => (
       <span class="ml-2 font-medium text-sm">アイコン</span>
     </div>
     <IconNameField />
-    <p class="mt-2 ml-1 text-sm text-zinc-400">Iconifyでアイコンを探して、Icon nameを入力してください。</p>
+    <div class="flex justify-between items-center">
+      <button
+        id="randomIconBtn"
+        class="flex w-full items-center justify-center my-2 px-3 py-1.5 text-xs font-medium text-zinc-300 bg-zinc-800 hover:bg-zinc-700 hover:text-zinc-100 rounded-md transition-colors"
+        title="ランダムにアイコンを選択"
+      >
+        🎲 ランダム
+      </button>
+    </div>
+    <p class="ml-1 text-sm text-zinc-400">その他のアイコンを適用するには、Iconifyでアイコンを探して、Icon nameを入力してください。</p>
     <div class="mt-2 flex justify-end">
       <a
         href="https://icon-sets.iconify.design/"

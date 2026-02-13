@@ -5,17 +5,17 @@ import { downloadSvg } from "../download/svg";
 import { downloadJpg } from "../download/jpg";
 import { updateInputStates } from "../ui/inputs";
 import { subscribe } from "../state";
+import notoIcons from "../data/noto-v1.json";
 
 // Flag to track if it's the first generation
 let isFirstGeneration = true;
 
-const PRESET_COLORS = ["#EF4444", "#3B82F6", "#22C55E", "#EAB308", "#A855F7", "#FFFFFF", "#000000"];
+const PRESET_COLORS = ["#EF4444", "#3B82F6", "#22C55E", "#EAB308", "#A855F7", "#000000"];
 
 function getRandomColors(): { icon: string; bg: string } {
-  const shuffled = [...PRESET_COLORS].sort(() => 0.5 - Math.random());
   return {
-    icon: shuffled[0],
-    bg: shuffled[1],
+    icon: "#FFFFFF",
+    bg: PRESET_COLORS[Math.floor(Math.random() * PRESET_COLORS.length)],
   };
 }
 
@@ -97,6 +97,26 @@ export function setupEventListeners(): void {
   // Download buttons
   els.downloadSvgBtn.addEventListener("click", downloadSvg);
   els.downloadJpgBtn.addEventListener("click", downloadJpg);
+
+  // Random icon
+  els.randomIconBtn?.addEventListener("click", () => {
+    const randomIcon = notoIcons[Math.floor(Math.random() * notoIcons.length)];
+
+    let randomBg;
+    const currentBg = els.bgColorPicker.value.toUpperCase();
+    do {
+      randomBg = PRESET_COLORS[Math.floor(Math.random() * PRESET_COLORS.length)];
+    } while (randomBg === currentBg && PRESET_COLORS.length > 1);
+
+    // Set icon
+    els.iconNameInput.value = `noto-v1:${randomIcon}`;
+
+    // Set background color
+    els.bgColorPicker.value = randomBg;
+    els.bgColorText.value = randomBg;
+
+    handlePreview();
+  });
 
   subscribe(updateInputStates);
 }
