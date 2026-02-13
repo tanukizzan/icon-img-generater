@@ -1,5 +1,6 @@
 import { Hono } from "hono";
 import { HomePage } from "./components/pages/HomePage";
+import { BasePathContext } from './context'
 
 type Bindings = {
   BASE_PATH: string
@@ -10,6 +11,7 @@ const app = new Hono<{ Bindings: Bindings }>()
 app.get("/api/icon-svg", async (c) => {
   const name = c.req.query("name");
   const color = c.req.query("color");
+  const basePath = c.env.BASE_PATH || "";
 
   if (!name) {
     return c.json({ error: "name parameter is required" }, 400);
@@ -36,7 +38,12 @@ app.get("/api/icon-svg", async (c) => {
 });
 
 app.get("/", (c) => {
-  return c.html(<HomePage />);
+  const basePath = c.env.BASE_PATH || "";
+  return c.html(
+    <BasePathContext.Provider value={basePath}>
+      <HomePage />
+    </BasePathContext.Provider>
+  );
 });
 
 export default app;

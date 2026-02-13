@@ -4,9 +4,12 @@ import { parseSvg } from "../svg/parse";
 import { showError, hideError } from "../ui/error";
 import { setDownloadEnabled } from "../ui/download-buttons";
 import { updatePreview } from "../ui/preview";
+import { useBasePath } from '../../context';
 
 export async function fetchIcon(): Promise<void> {
   const name = els.iconNameInput.value.trim();
+  const basePath = useBasePath();
+
   if (!name) {
     showError("アイコン名を入力してください");
     return;
@@ -21,7 +24,7 @@ export async function fetchIcon(): Promise<void> {
   els.previewBtn.disabled = true;
 
   try {
-    const res = await fetch(`/api/icon-svg?name=${encodeURIComponent(name)}`);
+    const res = await fetch(`${basePath}/api/icon-svg?name=${encodeURIComponent(name)}`);
     if (!res.ok) {
       const data: { error?: string } | null = await res.json().catch(() => null);
       throw new Error(data?.error || "アイコンの取得に失敗しました");
