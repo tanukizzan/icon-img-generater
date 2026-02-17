@@ -17,6 +17,7 @@ export const AppShell: FC<AppShellProps> = (props) => {
       </head>
       <body class="bg-zinc-950 text-zinc-100 m-0 h-[100dvh]">
         {props.children}
+        <script dangerouslySetInnerHTML={{ __html: `window.__BASE_PATH__ = "${basePath}";` }} />
         <script src={`${basePath}/app.js`}></script>
       </body>
     </html>

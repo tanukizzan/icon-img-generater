@@ -9,9 +9,9 @@ type Bindings = {
   BASE_PATH: string
 }
 
-export async function fetchIcon(env: Bindings): Promise<void> {
+export async function fetchIcon(env?: Bindings): Promise<void> {
   const name = els.iconNameInput.value.trim();
-  const basePath = env.BASE_PATH || "";
+  const basePath = env?.BASE_PATH ?? window.__BASE_PATH__ ?? "";
 
   if (!name) {
     showError("アイコン名を入力してください");

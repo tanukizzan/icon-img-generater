@@ -50,5 +50,8 @@ export const ColorInput: FC<ColorInputProps> = (props) => (
         class="bg-zinc-950 border border-zinc-800 rounded-md px-3 py-2 text-sm w-28 font-mono text-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-600"
       />
     </div>
+    <div id={`${props.pickerId}-warning`} class="invisible text-xs text-amber-500 mt-1">
+      色付きアイコンの色は変更できません
+    </div>
   </div>
 );
