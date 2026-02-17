@@ -1,6 +1,6 @@
 import type { FC, PropsWithChildren } from "hono/jsx";
 
-type ButtonVariant = "primary" | "success" | "warning";
+type ButtonVariant = "primary" | "secondary" | "success" | "warning";
 
 type ButtonProps = PropsWithChildren<{
   id: string;
@@ -12,6 +12,8 @@ type ButtonProps = PropsWithChildren<{
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
     "bg-zinc-100 text-zinc-900 hover:bg-zinc-200",
+  secondary:
+    "bg-zinc-800 text-zinc-100 hover:bg-zinc-700",
   success:
     "bg-emerald-600 text-white hover:bg-emerald-700",
   warning:

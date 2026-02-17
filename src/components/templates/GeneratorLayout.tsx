@@ -22,7 +22,8 @@ export const GeneratorLayout: FC<GeneratorLayoutProps> = (props) => (
       </aside>
     </div>
     <footer class="text-zinc-500 p-6">
-      <p>© 2026 tanukizzan. All rights reserved.</p>
+      <p>アイコンの利用については、各アイコンセットのライセンスを確認してください。</p>
+      <p class="text-xs mt-2">© 2026 tanukizzan. All rights reserved.</p>
     </footer>
   </div>
 );
