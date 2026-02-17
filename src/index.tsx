@@ -13,12 +13,12 @@ app.get("/api/icon-svg", async (c) => {
   const color = c.req.query("color");
 
   if (!name) {
-    return c.json({ error: "name parameter is required" }, 400);
+    return c.json({ error: "アイコン名を入力してください" }, 400);
   }
 
   const parts = name.split(":");
   if (parts.length !== 2) {
-    return c.json({ error: "Invalid icon name format. Use prefix:name (e.g. mdi:home)" }, 400);
+    return c.json({ error: "アイコン名は prefix:name 形式で入力してください（例: mdi:home）" }, 400);
   }
 
   const [prefix, iconName] = parts;
@@ -29,7 +29,7 @@ app.get("/api/icon-svg", async (c) => {
 
   const res = await fetch(url);
   if (!res.ok) {
-    return c.json({ error: "Icon not found" }, 404);
+    return c.json({ error: "アイコンが見つかりませんでした" }, 404);
   }
 
   const svg = await res.text();

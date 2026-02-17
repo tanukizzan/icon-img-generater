@@ -55,7 +55,7 @@ export async function fetchIcon(env?: Bindings): Promise<void> {
       iconInner: "",
     });
     setDownloadEnabled(false);
-    els.previewArea.innerHTML = `<span class="text-zinc-500 text-sm">アイコン名を入力してプレビュー</span>`;
+    els.previewArea.innerHTML = `<span class="text-zinc-500 text-sm">プレビュー</span>`;
   } finally {
     els.previewBtn.disabled = false;
   }

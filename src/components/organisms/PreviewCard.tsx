@@ -10,6 +10,9 @@ export const PreviewCard: FC = () => (
     >
       <PlaceholderText>プレビュー</PlaceholderText>
     </div>
+    <div>
+      <p class="text-xs sm:text-sm text-zinc-500 mt-2">プレビュー</p>
+    </div>
 
     {/* Full screen modal */}
     <div
