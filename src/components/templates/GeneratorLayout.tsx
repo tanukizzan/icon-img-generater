@@ -14,7 +14,7 @@ export const GeneratorLayout: FC<GeneratorLayoutProps> = (props) => (
       </p>
     </div>
     <div class="flex">
-      <main class="w-1/4 shrink-0 pl-3 pr-1.5 py-4 sticky top-0 self-start bg-zinc-950">
+      <main class="w-1/4 shrink-0 pl-3 pr-1.5 py-4 sticky top-0 self-start bg-zinc-950 z-20">
         {props.main}
       </main>
       <aside class="w-3/4 min-w-0 md:grid md:grid-cols-2 gap-2 lg:gap-4 space-y-8 md:space-y-0 pl-1.5 pr-3 py-4 bg-zinc-950">

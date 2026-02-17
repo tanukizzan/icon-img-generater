@@ -118,5 +118,55 @@ export function setupEventListeners(): void {
     handlePreview();
   });
 
+  // Modal events
+  const openModal = () => {
+    const svgContent = els.previewArea.innerHTML;
+    if (!svgContent || svgContent.trim() === "") return;
+
+    els.previewModalContent.innerHTML = svgContent;
+    const modalSvg = els.previewModalContent.querySelector("svg");
+
+    if (modalSvg) {
+      // Clean up inline styles that might restrict size in modal
+      modalSvg.style.width = "100%";
+      modalSvg.style.height = "100%";
+      modalSvg.style.maxWidth = "min(80vw, 80vh)"; // Responsive max size
+      modalSvg.style.maxHeight = "min(80vw, 80vh)";
+
+      // Remove any fixed dimensions if present
+      modalSvg.removeAttribute("width");
+      modalSvg.removeAttribute("height");
+    }
+
+    els.previewModal.classList.remove("hidden");
+    // Small delay to allow display:block to apply before opacity transition
+    requestAnimationFrame(() => {
+      els.previewModal.classList.remove("opacity-0");
+    });
+  };
+
+  const closeModal = () => {
+    els.previewModal.classList.add("opacity-0");
+    setTimeout(() => {
+      els.previewModal.classList.add("hidden");
+      els.previewModalContent.innerHTML = "";
+    }, 300); // Match transition duration
+  };
+
+  els.previewArea.addEventListener("click", openModal);
+  els.closePreviewModalBtn.addEventListener("click", closeModal);
+  els.previewModal.addEventListener("click", (e) => {
+    if (e.target === els.previewModal) {
+      closeModal();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !els.previewModal.classList.contains("hidden")) {
+      closeModal();
+    }
+  });
+
   subscribe(updateInputStates);
 }

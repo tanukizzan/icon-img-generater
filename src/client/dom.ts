@@ -12,6 +12,9 @@ export const els = {
   downloadJpgBtn: document.getElementById("downloadJpgBtn") as HTMLButtonElement,
   shapeSlider: document.getElementById("shapeSlider") as HTMLInputElement,
   randomIconBtn: document.getElementById("randomIconBtn") as HTMLButtonElement,
+  previewModal: document.getElementById("previewModal") as HTMLDivElement,
+  previewModalContent: document.getElementById("previewModalContent") as HTMLDivElement,
+  closePreviewModalBtn: document.getElementById("closePreviewModalBtn") as HTMLButtonElement,
 };
 
 export function getShape(): number {

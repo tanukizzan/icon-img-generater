@@ -14,7 +14,7 @@ export const IconNameCard: FC = () => (
       <span class="ml-2 font-medium text-sm">アイコン</span>
     </div>
     <IconNameField />
-    <p class="mt-4 ml-1 text-sm text-zinc-400">アイコンを追加するには、Iconifyでアイコンを探して、Icon nameを入力してください。</p>
+    <p class="mt-4 ml-1 text-sm text-zinc-400">アイコンを適用するには、Iconifyでアイコンを探して、Icon nameを入力してください。</p>
     <div class="mt-2 flex justify-end">
       <a
         href="https://icon-sets.iconify.design/"
