@@ -32,6 +32,7 @@ lerna-debug.log*
 
 # build output
 public/app.js
+public/styles.css
 
 # claude
 .claude/
