@@ -6,11 +6,11 @@ type GeneratorLayoutProps = {
 };
 
 export const GeneratorLayout: FC<GeneratorLayoutProps> = (props) => (
-  <div class="h-full w-full lg:max-w-7xl mx-auto">
+  <div class="h-full w-full lg:max-w-5xl mx-auto">
     <div class="p-8 mt-4">
       <h1 class="text-xl font-bold tracking-tight text-zinc-100">かんたんアイコンジェネレーター</h1>
       <p class="text-xs text-zinc-500 mt-1">
-        20万個以上のIconifyアイコンからカスタム画像を生成
+        20万以上のIconifyアイコンからカスタム画像を生成
       </p>
     </div>
     <div class="flex">

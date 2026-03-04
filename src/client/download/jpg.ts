@@ -28,7 +28,7 @@ export function downloadJpg(): void {
       (jpgBlob) => {
         if (!jpgBlob) return;
         const name = els.iconNameInput.value.trim().replace(":", "-") || "icon";
-        downloadBlob(jpgBlob, `${name}.jpg`);
+        downloadBlob(jpgBlob, `${name}-${size}.jpg`);
       },
       "image/jpeg",
       0.95

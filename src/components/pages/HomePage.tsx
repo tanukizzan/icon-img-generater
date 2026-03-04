@@ -8,7 +8,7 @@ import { DownloadCard } from "../organisms/DownloadCard";
 import { PreviewCard } from "../organisms/PreviewCard";
 
 export const HomePage: FC = () => (
-  <AppShell title="アイコン画像ジェネレーター">
+  <AppShell title="かんたんアイコンジェネレーター">
     <GeneratorLayout
       sidebar={
         <>
